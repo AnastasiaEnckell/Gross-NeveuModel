@@ -1,1 +1,1 @@
-# Gross-NeveuModel
+# Gross-Neveu Model
