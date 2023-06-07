@@ -23,7 +23,7 @@ backend_MPS = "MPS_ITensor" # calculate with MPS (any higher number of qubits)
 qc_MPS = initialise_qcircuit(N, backend_MPS, maxdim=maxdim)
 
 
-df = CSV.read("testfile.csv", DataFrame; header=false) #open the file with the data 
+df = CSV.read("xyzdata.csv", DataFrame; header=false) #open the file with the data 
 vectorOfVectors = [collect(row) for row in eachrow(df)]
 new_length = length(vectorOfVectors) ÷ 3
 
@@ -32,7 +32,7 @@ u = [vectorOfVectors[(i-1)*3+1:i*3] for i in 1:new_length]
 gates = [[[x for x in inner_vec if x != 0] for inner_vec in mid_vec] for mid_vec in u]
 
 
-dg = CSV.read("testfile1.csv", DataFrame; header=false)
+dg = CSV.read("zdata.csv", DataFrame; header=false)
 vectorOfVectors = [collect(row) for row in eachrow(dg)]
 self = [[x for x in inner_vec if x != 0] for inner_vec in vectorOfVectors]
 
