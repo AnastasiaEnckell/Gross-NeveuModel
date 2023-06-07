@@ -1,13 +1,11 @@
+# This program simulate a real-time dynimics of the massive Gross-Neveu model with the Bravyi-Kitaev transformation and a lexicographic ordering of terms. 
+
 using CSV,  DataFrames
 include("QSim.jl")
 
 
 N = 16+1 # total number of qubits
 maxdim = 5 # maximum allowed bond dimension for MPS initiallly 20
-#contmethod = "naive" # contraction method for MPS (not so important right now)
-#random = false # no random intial state for circuit
-#lintop = false # possibility to use linear qubit topology, also don't touch for now :)
-#randombond = 10 # bond dimension of random initial MPS, if needed'
 dt = 0.1 #timestep 
 lastqubit = N
 
